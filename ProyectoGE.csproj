@@ -210,6 +210,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ConexionDB.cs" />
+    <Compile Include="Models\EmpleadosDAL.cs" />
     <Compile Include="Pages\frmEmpleados.aspx.cs">
       <DependentUpon>frmEmpleados.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -242,6 +244,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Styles\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

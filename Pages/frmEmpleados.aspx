@@ -1,51 +1,25 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmEmpleados.aspx.cs" Inherits="ProyectoGE.Pages.frmEmpleados" %>
 
-
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head runat="server">
-    <title>Ingreso de Empleados</title>
+    <title>Empleados</title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <h2>Ingreso de Empleados</h2>
-
-            Nombre:<br />
-            <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox><br />
-
-            Apellido:<br />
-            <asp:TextBox ID="txtApellido" runat="server"></asp:TextBox><br />
-
-            Fecha de Nacimiento:<br />
-            <asp:TextBox ID="txtFechaNacimiento" runat="server" TextMode="Date"></asp:TextBox><br />
-
-            Teléfono:<br />
-            <asp:TextBox ID="txtTelefono" runat="server"></asp:TextBox><br />
-
-            Correo Electrónico:<br />
-            <asp:TextBox ID="txtCorreo" runat="server" TextMode="Email"></asp:TextBox><br />
-
-            Dirección:<br />
-            <asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox><br />
-
-            Fecha de Ingreso:<br />
-            <asp:TextBox ID="txtFechaIngreso" runat="server" TextMode="Date"></asp:TextBox><br />
-
-            Salario:<br />
-            <asp:TextBox ID="txtSalario" runat="server" TextMode="Number"></asp:TextBox><br />
-
-            Departamento:<br />
-            <asp:DropDownList ID="ddlDepartamento" runat="server">
-                <asp:ListItem Text="Seleccione un departamento" Value=""></asp:ListItem>
-                <asp:ListItem Text="Recursos Humanos" Value="1"></asp:ListItem>
-                <asp:ListItem Text="Tecnología" Value="2"></asp:ListItem>
-                <asp:ListItem Text="Finanzas" Value="3"></asp:ListItem>
-                <asp:ListItem Text="Marketing" Value="4"></asp:ListItem>
-            </asp:DropDownList><br /><br />
-
-            <asp:Button ID="btnGuardar" runat="server" Text="Guardar Empleado" OnClick="btnGuardar_Click" />
-        </div>
+        <asp:Button ID="btnCargar" runat="server" Text="Cargar Empleados" OnClick="btnCargar_Click" />
+        <asp:GridView ID="gvEmpleados" runat="server" AutoGenerateColumns="false">
+            <Columns>
+                <asp:BoundField HeaderText="ID" DataField="IdEmpleado" />
+                <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
+                <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
+                <asp:BoundField HeaderText="Correo" DataField="Correo" />
+                <asp:BoundField HeaderText="Departamento" DataField="IdDepartamento" />
+                <asp:BoundField HeaderText="Ingreso" DataField="FechaIngreso" DataFormatString="{0:yyyy-MM-dd}" />
+                <asp:BoundField HeaderText="Salario" DataField="Salario" DataFormatString="{0:N2}" />
+            </Columns>
+        </asp:GridView>
+        <asp:Label ID="lblTotal" runat="server" />
     </form>
 </body>
 </html>
